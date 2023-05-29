@@ -1,0 +1,94 @@
+name: abc-cloud
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - 2181:2181
+    networks:
+      - abc
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    container_name: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - 9092:9092
+      - 29092:29092
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    networks:
+      - abc
+
+  abc-mysql:
+    image: mysql:latest
+    container_name: abc-mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: abc-cloud
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - abc
+    volumes:
+      - mysqldbvolume:/var/lib/mysql:rw
+    user: mysql
+
+  authentication-service:
+    image: abc-authentication-service:latest
+    container_name: authentication-service
+    depends_on:
+      - abc-mysql
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+    ports:
+      - 127.0.0.1:8081:8080
+    networks:
+      - abc
+
+  xml-uploader-service:
+    image: abc-xml-uploader-service:latest
+    container_name: xml-uploader-service
+    depends_on:
+      - kafka
+      - authentication-service
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+    ports:
+      - 127.0.0.1:8082:8080
+    networks:
+      - abc
+    volumes:
+      - fileUploads:/var/upload
+
+  xml-processor-service:
+    image: abc-xml-processor-service:latest
+    container_name: xml-processor-service
+    depends_on:
+      - xml-uploader-service
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+    ports:
+      - 127.0.0.1:8083:8080
+    networks:
+      - abc
+    volumes:
+      - fileUploads:/var/upload
+
+networks:
+  abc:
+
+volumes:
+  mysqldbvolume:
+    driver: local
+  fileUploads:
+    driver: local
