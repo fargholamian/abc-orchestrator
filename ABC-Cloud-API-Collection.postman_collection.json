@@ -1,0 +1,622 @@
+{
+	"info": {
+		"_postman_id": "b612992b-1322-4f99-a5b2-b62d921ca420",
+		"name": "ABC-Cloud-API-Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19945173"
+	},
+	"item": [
+		{
+			"name": "Register New User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"admin\",\n    \"confirm_password\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8081/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register New User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"admin\",\n    \"confirm_password\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8081/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 31 May 2023 12:02:04 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"type\": \"Bearer\",\n    \"auth_token\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInRva2VuX3R5cGUiOiJBVVRIIiwiZXhwIjoxNjg1NTM0ODI0LCJpYXQiOjE2ODU1MzQ1MjR9.zT_5tc7CLPZXc7OleDL8U2JNN0GYNQhFe_6CVT2b2QbGsIDDh2XJPQcy00xV1QFXtUQw44Id5aPkGMwXRm6v2A\",\n    \"refresh_token\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInRva2VuX3R5cGUiOiJSRUZSRVNIIiwiZXhwIjoxNjg1NjIwOTI0LCJpYXQiOjE2ODU1MzQ1MjR9.ImZlffG5Fos9AScREP_9L6YAJezg9XjscKoKEj2v4OXx_t4VMSDFzzkMr6O30Gz-IYf23UG2QTR9LGBkM0klCA\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login (Get Token)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login (Get Token)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 31 May 2023 12:03:06 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"type\": \"Bearer\",\n    \"auth_token\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInRva2VuX3R5cGUiOiJBVVRIIiwiZXhwIjoxNjg1NTM0ODg2LCJpYXQiOjE2ODU1MzQ1ODZ9.lTcegwx3uAu3F8fh6jvvIYdN8MWHQj7Ml8wOccEfNfUkHPrtbeLY1Zxz5s8hH4RFPdqfWLENq38557xeWwDT3A\",\n    \"refresh_token\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInRva2VuX3R5cGUiOiJSRUZSRVNIIiwiZXhwIjoxNjg1NjIwOTg2LCJpYXQiOjE2ODU1MzQ1ODZ9.rSBqcNhOJFlPwo3C8nQ4Sv1NhMBFGmYSKHho0310hHFzQlCMqNbHqZgfutqxDhA8SUzXv1oH-8otkDgJ7Rt5Ng\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get User Info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInRva2VuX3R5cGUiOiJBVVRIIiwiZXhwIjoxNjg1NTM0ODg2LCJpYXQiOjE2ODU1MzQ1ODZ9.lTcegwx3uAu3F8fh6jvvIYdN8MWHQj7Ml8wOccEfNfUkHPrtbeLY1Zxz5s8hH4RFPdqfWLENq38557xeWwDT3A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"user",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get User Info",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 31 May 2023 12:03:59 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"98feaa50-87ea-432e-8937-f5a76322ab2d\",\n    \"username\": \"admin\",\n    \"password\": \"$2a$10$g6UnUHBZVg0SynwqW3/daOf2Bu2g2M0w6zUIJhDj4.zmhsAXlzANu\",\n    \"role\": \"ROLE_USER\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Upload XML File",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInRva2VuX3R5cGUiOiJBVVRIIiwiZXhwIjoxNjg1NTM0ODg2LCJpYXQiOjE2ODU1MzQ1ODZ9.lTcegwx3uAu3F8fh6jvvIYdN8MWHQj7Ml8wOccEfNfUkHPrtbeLY1Zxz5s8hH4RFPdqfWLENq38557xeWwDT3A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/farzad/Downloads/Products.xml"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product by User Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInRva2VuX3R5cGUiOiJBVVRIIiwiZXhwIjoxNjg1NTM0ODg2LCJpYXQiOjE2ODU1MzQ1ODZ9.lTcegwx3uAu3F8fh6jvvIYdN8MWHQj7Ml8wOccEfNfUkHPrtbeLY1Zxz5s8hH4RFPdqfWLENq38557xeWwDT3A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8083/api/product?userId=3b4c7e39-727f-4b4b-ab41-5fe10868328e&offset=0&size=1&format=csv",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"product"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "3b4c7e39-727f-4b4b-ab41-5fe10868328e",
+							"description": "Mandatory (get it from /api/user/)"
+						},
+						{
+							"key": "offset",
+							"value": "0",
+							"description": "Optional - page offset"
+						},
+						{
+							"key": "size",
+							"value": "1",
+							"description": "Optional - page size - Default=100, Max=1000"
+						},
+						{
+							"key": "format",
+							"value": "csv",
+							"description": "Optional - output format [json,xml,csv] - Default= json"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Product by User Id (Json)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8083/api/product?userId=3b4c7e39-727f-4b4b-ab41-5fe10868328e&offset=0&size=1&format=json",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"product"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "3b4c7e39-727f-4b4b-ab41-5fe10868328e"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=ISO-8859-1"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1787"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 31 May 2023 12:05:38 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"groupingId\": \"skuSKU1-TV0000011\",\n        \"language\": \"sv\",\n        \"name\": \"Second Test product name\",\n        \"description\": \"Second description\",\n        \"productImage\": {\n            \"id\": \"42aed5ff-e242-474b-8d2f-4737549a82b4\",\n            \"height\": 70,\n            \"width\": 140,\n            \"url\": \"https://picsum.photos/id/1/200/300\"\n        },\n        \"categories\": [\n            {\n                \"id\": \"f2a13759-7cf2-45c7-823c-4df4706c757d\",\n                \"categoryId\": 708,\n                \"name\": \"Skates\",\n                \"tdCategoryName\": \"Skates\"\n            }\n        ],\n        \"fields\": [\n            {\n                \"id\": \"36edf139-ebfd-4c25-a2c6-5244d3c2f928\",\n                \"name\": \"ProductType\",\n                \"value\": \"Mobile\"\n            },\n            {\n                \"id\": \"87c32ab4-debe-4b67-974a-2c7f670364f0\",\n                \"name\": \"HomeDelivery\",\n                \"value\": \"Yes\"\n            },\n            {\n                \"id\": \"b694f49c-fcb5-4296-8579-74e7875f8736\",\n                \"name\": \"Company\",\n                \"value\": \"Samsung\"\n            }\n        ],\n        \"weight\": \"500 g\",\n        \"size\": \"120x70x70 cm\",\n        \"model\": \"SamsungMobile000001\",\n        \"brand\": \"Samsung\",\n        \"manufacturer\": \"Samsung\",\n        \"techSpecs\": \"SMART Mobile\",\n        \"shortDescription\": \"Mobile from Samsung\",\n        \"promoText\": \"Reduced price!!\",\n        \"ean\": \"ean101000000000000011\",\n        \"upc\": \"upc101000000000000011\",\n        \"isbn\": \"isn101000000000000011\",\n        \"mpn\": \"mpn101000000000000011\",\n        \"sku\": \"SKU1-TV0000011\",\n        \"offers\": [\n            {\n                \"id\": \"d3358e9f-7fbc-4cbe-925b-0323f4e5644d\",\n                \"offerId\": \"e8d137ad-9bfe-47f6-9b72-58545fb2a70b\",\n                \"sourceProductId\": \"Second sourceProductId wnHobsXREr XuYGCrLEaA\",\n                \"modifiedDate\": \"1677520388461\",\n                \"dateFormat\": \"epoch\",\n                \"feedId\": 99999999,\n                \"productUrl\": \"hhttps://www.test.com?prod=2\",\n                \"programName\": \"Program302870\",\n                \"programLogo\": \"http://logo.gif\",\n                \"priceHistory\": [\n                    {\n                        \"id\": \"bb0970f9-5127-4a0f-89fe-6715245dfaad\",\n                        \"currency\": \"SEK\",\n                        \"date\": 1677520388461,\n                        \"dateFormat\": \"epoch\",\n                        \"value\": 224.55\n                    }\n                ],\n                \"warranty\": \"5 years warranty\",\n                \"inStock\": 150,\n                \"availability\": \"In stock at store\",\n                \"deliveryTime\": \"8-21 days\",\n                \"condition\": \"New\",\n                \"shippingCost\": \"The shipping cost is 40.\"\n            }\n        ],\n        \"owner\": {\n            \"id\": \"bc57bb1d-66dc-4951-8cac-848c636dddd2\",\n            \"userId\": \"3b4c7e39-727f-4b4b-ab41-5fe10868328e\",\n            \"filename\": \"c217d017-72ca-4e6f-ba54-5ef98b9fd9b6.xml\"\n        }\n    }\n]"
+				},
+				{
+					"name": "Get Product by User Id (xml)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8083/api/product?userId=3b4c7e39-727f-4b4b-ab41-5fe10868328e&offset=0&size=1&format=xml",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"product"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "3b4c7e39-727f-4b4b-ab41-5fe10868328e"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "format",
+									"value": "xml"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml;charset=ISO-8859-1"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 31 May 2023 12:06:02 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<products xmlns:ns2=\"urn:com:tradedoubler:pf:model:xml:common\" xmlns:ns3=\"urn:com:tradedoubler:pf:model:xml:output\">\n    <product groupingId=\"skuSKU1-TV0000011\" language=\"sv\">\n        <owner>\n            <id>bc57bb1d-66dc-4951-8cac-848c636dddd2</id>\n            <userId>3b4c7e39-727f-4b4b-ab41-5fe10868328e</userId>\n            <filename>c217d017-72ca-4e6f-ba54-5ef98b9fd9b6.xml</filename>\n        </owner>\n        <ns2:name>Second Test product name</ns2:name>\n        <ns2:description>Second description</ns2:description>\n        <ns2:productImage height=\"70\" width=\"140\">https://picsum.photos/id/1/200/300</ns2:productImage>\n        <ns2:categories>\n            <ns2:category id=\"708\" name=\"Skates\" tdCategoryName=\"Skates\">\n                <id>f2a13759-7cf2-45c7-823c-4df4706c757d</id>\n            </ns2:category>\n        </ns2:categories>\n        <ns2:fields>\n            <ns2:field name=\"ProductType\">Mobile</ns2:field>\n            <ns2:field name=\"HomeDelivery\">Yes</ns2:field>\n            <ns2:field name=\"Company\">Samsung</ns2:field>\n        </ns2:fields>\n        <ns2:weight>500 g</ns2:weight>\n        <ns2:size>120x70x70 cm</ns2:size>\n        <ns2:model>SamsungMobile000001</ns2:model>\n        <ns2:brand>Samsung</ns2:brand>\n        <ns2:manufacturer>Samsung</ns2:manufacturer>\n        <ns2:techSpecs>SMART Mobile</ns2:techSpecs>\n        <ns2:shortDescription>Mobile from Samsung</ns2:shortDescription>\n        <ns2:promoText>Reduced price!!</ns2:promoText>\n        <ns2:ean>ean101000000000000011</ns2:ean>\n        <ns2:upc>upc101000000000000011</ns2:upc>\n        <ns2:isbn>isn101000000000000011</ns2:isbn>\n        <ns2:mpn>mpn101000000000000011</ns2:mpn>\n        <ns2:sku>SKU1-TV0000011</ns2:sku>\n        <ns3:offers>\n            <ns3:offer id=\"e8d137ad-9bfe-47f6-9b72-58545fb2a70b\" sourceProductId=\"Second sourceProductId wnHobsXREr XuYGCrLEaA\" modifiedDate=\"1677520388461\" dateFormat=\"epoch\">\n                <ns2:feedId>99999999</ns2:feedId>\n                <ns2:productUrl>hhttps://www.test.com?prod=2</ns2:productUrl>\n                <ns2:programName>Program302870</ns2:programName>\n                <ns2:programLogo>http://logo.gif</ns2:programLogo>\n                <ns3:priceHistory>\n                    <ns2:price currency=\"SEK\" date=\"1677520388461\" dateFormat=\"epoch\">224.55</ns2:price>\n                </ns3:priceHistory>\n                <ns2:warranty>5 years warranty</ns2:warranty>\n                <ns2:inStock>150</ns2:inStock>\n                <ns2:availability>In stock at store</ns2:availability>\n                <ns2:deliveryTime>8-21 days</ns2:deliveryTime>\n                <ns2:condition>New</ns2:condition>\n                <ns2:shippingCost>The shipping cost is 40.</ns2:shippingCost>\n            </ns3:offer>\n        </ns3:offers>\n    </product>\n</products>"
+				},
+				{
+					"name": "Get Product by User Id (csv)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8083/api/product?userId=3b4c7e39-727f-4b4b-ab41-5fe10868328e&offset=0&size=1&format=csv",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"product"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "3b4c7e39-727f-4b4b-ab41-5fe10868328e"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "format",
+									"value": "csv"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Disposition",
+							"value": "attachment; filename=\"a0e106c7-1f8d-4def-9116-e2f4b49f80c1\""
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/csv;charset=ISO-8859-1"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1074"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 31 May 2023 12:06:15 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": ",id,event_id,event_userId,event_filename,groupingId,language,name,description,productImage_id,productImage_height,productImage_width,productImage_url,categories,fields,weight,size,model,brand,manufacturer,techSpecs,shortDescription,promoText,ean,upc,isbn,mpn,sku,offers\r\n,0a182d0a-7063-49cc-8943-3ec4c33f7b1f,bc57bb1d-66dc-4951-8cac-848c636dddd2,3b4c7e39-727f-4b4b-ab41-5fe10868328e,c217d017-72ca-4e6f-ba54-5ef98b9fd9b6.xml,skuSKU1-TV0000011,sv,Second Test product name,Second description,42aed5ff-e242-474b-8d2f-4737549a82b4,70,140,https://picsum.photos/id/1/200/300,[com.tradedoubler.xmlprocessorservice.model.Category@19325295],[com.tradedoubler.xmlprocessorservice.model.Field@8686806 com.tradedoubler.xmlprocessorservice.model.Field@42f731e4 com.tradedoubler.xmlprocessorservice.model.Field@1b2c4504],500 g,120x70x70 cm,SamsungMobile000001,Samsung,Samsung,SMART Mobile,Mobile from Samsung,Reduced price!!,ean101000000000000011,upc101000000000000011,isn101000000000000011,mpn101000000000000011,SKU1-TV0000011,[com.tradedoubler.xmlprocessorservice.model.Offer@554a07e6]\r\n"
+				}
+			]
+		}
+	]
+}
